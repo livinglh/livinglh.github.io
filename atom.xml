@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://livinglh.top/"/>
-  <updated>2019-12-13T10:08:52.227Z</updated>
+  <updated>2019-12-13T10:31:46.774Z</updated>
   <id>https://livinglh.top/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://livinglh.top/2019/12/12/spring-ji-ben-shi-yong/"/>
     <id>https://livinglh.top/2019/12/12/spring-ji-ben-shi-yong/</id>
     <published>2019-12-12T00:49:34.000Z</published>
-    <updated>2019-12-13T10:08:52.227Z</updated>
+    <updated>2019-12-13T10:31:46.774Z</updated>
     
     <summary type="html">
     
@@ -29,7 +29,7 @@
       
         
         
-          &lt;h1 id=&quot;1-Sring是什么？&quot;&gt;&lt;a href=&quot;#1-Sring是什么？&quot; class=&quot;headerlink&quot; title=&quot;1. Sring是什么？&quot;&gt;&lt;/a&gt;1. Sring是什么？&lt;/h1&gt;&lt;p&gt;Spring 是分层的 Java SE/EE 应用
+          &lt;h1 id=&quot;Spring&quot;&gt;&lt;a href=&quot;#Spring&quot; class=&quot;headerlink&quot; title=&quot;Spring&quot;&gt;&lt;/a&gt;Spring&lt;/h1&gt;&lt;h2 id=&quot;1-Spring是什么&quot;&gt;&lt;a href=&quot;#1-Spring是什么&quot;
         
       
     
@@ -42,6 +42,10 @@
       <category term="Spring" scheme="https://livinglh.top/tags/Spring/"/>
     
       <category term="Java" scheme="https://livinglh.top/tags/Java/"/>
+    
+      <category term="IOC" scheme="https://livinglh.top/tags/IOC/"/>
+    
+      <category term="AOP" scheme="https://livinglh.top/tags/AOP/"/>
     
   </entry>
   
