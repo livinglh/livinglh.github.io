@@ -1,0 +1,1554 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="spring基本使用, livinglh">
+    <meta name="description" content="
+title: spring基本使用date: 2019-12-12 08:49:34categories: Java Springtags:  
+
+Spring
+Javacover: true
+
+
+1. Sring是什么？
+Spring ">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>spring基本使用 | livinglh</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+
+    <link rel="stylesheet" type="text/css" href="/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="/css/my.css">
+    
+    <script src="/libs/jquery/jquery.min.js"></script>
+    
+<meta name="generator" content="Hexo 4.1.0"><link rel="alternate" href="/atom.xml" title="livinglh" type="application/atom+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css"></head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper head-container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">livinglh</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/tags" class="waves-effect waves-light">
+      
+      <i class="fas fa-tags" style="zoom: 0.6;"></i>
+      
+      <span>标签</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/categories" class="waves-effect waves-light">
+      
+      <i class="fas fa-bookmark" style="zoom: 0.6;"></i>
+      
+      <span>分类</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">livinglh</div>
+        <div class="logo-desc">
+            
+            Never really desperate, only the lost of the soul.
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/tags" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-tags"></i>
+			
+			标签
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/categories" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-bookmark"></i>
+			
+			分类
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/archives" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-archive"></i>
+			
+			归档
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+    </ul>
+</div>
+
+        </div>
+
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('/medias/featureimages/16.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <div class="description center-align post-title">
+                        spring基本使用
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        height: calc(100vh - 250px);
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                          <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                          </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2019-12-13
+                </div>
+                
+
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    4k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    15 分
+                </div>
+                
+				
+                
+            </div>
+            
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <hr>
+<p>title: spring基本使用<br>date: 2019-12-12 08:49:34<br>categories: Java Spring<br>tags:  </p>
+<ul>
+<li>Spring</li>
+<li>Java<br>cover: true</li>
+</ul>
+<hr>
+<h1 id="1-Sring是什么？"><a href="#1-Sring是什么？" class="headerlink" title="1. Sring是什么？"></a>1. Sring是什么？</h1><ul>
+<li>Spring 是分层的 Java SE/EE 应用 full-stack 轻量级开源框架，以 IoC（Inverse Of Control：反转控制）和 AOP（Aspect Oriented Programming：面向切面编程）为内核，提供了展现层 SpringMVC 和持久层 Spring JDBC 以及业务层事务管理等众多的企业级应用技术，还能整合开源世界众多著名的第三方框架和类库，逐渐成为使用最多的 Java EE 企业应用开源框架。<h1 id="2-Spring的优势："><a href="#2-Spring的优势：" class="headerlink" title="2. Spring的优势："></a>2. Spring的优势：</h1></li>
+</ul>
+<ol>
+<li><p>方便解耦，简化开发</p>
+</li>
+<li><p>AOP编程的支持</p>
+</li>
+<li><p>声明式事务的支持</p>
+</li>
+<li><p>方便程序的测试</p>
+</li>
+<li><p>方便集成各种优秀的框架</p>
+</li>
+<li><p>降低 JavaEE API的使用难度</p>
+<ul>
+<li><p>什么是程序的耦合？</p>
+<ul>
+<li><p>程序间的依赖关系</p>
+<ul>
+<li>类之间的依赖</li>
+<li>方法间的依赖</li>
+</ul>
+</li>
+<li><p>解耦</p>
+<ul>
+<li>降低程序间的依赖关系</li>
+</ul>
+</li>
+<li><p>实际开发中</p>
+<ul>
+<li>编译期不依赖，运行时才依赖</li>
+</ul>
+</li>
+<li><p>解耦的思路：</p>
+<ol>
+<li>使用反射来创建对象，而避免使用new关键字</li>
+<li>通过读取配置文件来获取要创建的对象全限定类名</li>
+</ol>
+</li>
+<li><p>Bean: 在计算机英语中，有可重用组件的含义</p>
+</li>
+<li><p>JavaBean: 用java语言编写的可重用组件   javabean&gt;实体类</p>
+</li>
+<li><p>一个创建Bean对象的工厂： 创建service和dao对象</p>
+<ol>
+<li>需要一个配置文件配置service和dao  （xml或者properties）<ul>
+<li>配置内容：唯一标识=全限定类名（key=value）</li>
+</ul>
+</li>
+<li>通过读取配置文件中的配置内容，反射创建对象</li>
+</ol>
+</li>
+<li><p>IOC（Inverse Of Control：控制反转）</p>
+<ul>
+<li>把创建对象的权利交给框架，是框架的重要特征</li>
+<li>作用：削减程序间的耦合<h1 id="3-使用spring的IOC解决程序耦合"><a href="#3-使用spring的IOC解决程序耦合" class="headerlink" title="3. 使用spring的IOC解决程序耦合"></a>3. 使用spring的IOC解决程序耦合</h1></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>在maven工程的配置文件中导入spring依赖</p>
+</li>
+<li><p>在资源根目录下创建xml文件</p>
+</li>
+<li><p>让spring管理资源，在xml配置文件中配置service和dao</p>
+</li>
+<li><p>测试使用：</p>
+<ol>
+<li><p>获取核心容器容器<br><code>ApplicationContext ac = new ClassPathXmlApplicationContext("bean.xml");</code></p>
+</li>
+<li><p>根据 bean 的 id 获取对象</p>
+<pre><code> IAccountService aService = (IAccountService) ac.getBean("accountService");
+ IAccountService aService = ac.getBean("accountService",IAccountDao.class);
+ System.out.println(aService);
+ IAccountDao aDao = (IAccountDao) ac.getBean("accountDao");
+ System.out.println(aDao);</code></pre></li>
+<li><p>执行所需执行的方法</p>
+<ul>
+<li>ApplicationContext的三个常用实现类<ul>
+<li>ClassPathXmlApplicationContext：<ul>
+<li>从类的根路径下加载配置文件</li>
+</ul>
+</li>
+<li>FileSystemXmlApplicationContext：<ul>
+<li>从磁盘路径上加载配置文件，配置文件可以在磁盘的任意位置</li>
+</ul>
+</li>
+<li>AnnotationConfigApplicationContext:<ul>
+<li>使用注解配置容器对象时，需要使用此类来创建 spring 容器。它用来读取注解</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>核心容器的两个接口引发出的问题<ul>
+<li>BeanFactory：单列对象适用 （常用）<ul>
+<li>创建对象采取的策略是延迟加载的方式。什么使用什么时候创建对象。（</li>
+</ul>
+</li>
+<li>ApplicationContext：多例对象适用<ul>
+<li>创建对象采取的策略是立即加载的方式。只要一读取配置文件，默认情况下马上就会创建配置文件中配置的对象。<h1 id="4-spring对Bean的管理细节"><a href="#4-spring对Bean的管理细节" class="headerlink" title="4. spring对Bean的管理细节"></a>4. spring对Bean的管理细节</h1></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p>bean 标签</p>
+<ul>
+<li>作用：用于配置对象让 spring 来创建的。默认情况下它调用的是类中的无参构造函数。如果没有无参构造函数则不能创建成功。</li>
+<li>属性：<ul>
+<li>id： 给对象在容器中提供一个唯一标识。用于获取对象。</li>
+<li>class： 指定类的全限定类名。用于反射创建对象。默认情况下调用无参构造函数。</li>
+<li>scope： 指定对象的作用范围。</li>
+<li>init-method： 指定类中的初始化方法名称。</li>
+<li>destroy-method： 指定类中销毁方法名称。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>创建Bean的三种方式（sping配置文件中）</p>
+<ol>
+<li><p>使用默认构造函数创建</p>
+<ul>
+<li>在spring的配置文件中使用bean标签，配以id和class属性之后，且没有其他属性和标签时 </li>
+<li>它会根据默认无参构造函数来创建类对象。如果 bean 中没有默认无参构造函数，将会创建失败<br><code>&lt;bean id="accountService" class="com.itheima.service.impl.AccountServiceImpl"/&gt;</code></li>
+</ul>
+</li>
+<li><p>使用普通工厂中的方法创建对象（使用某个类中的方法创建对象，并存入spring容器）</p>
+<ul>
+<li><p>先把工厂的创建交给 spring 来管理。然后在使用工厂的 bean 来调用里面的方法</p>
+</li>
+<li><p>factory-bean 属性：用于指定实例工厂 bean 的 id。</p>
+</li>
+<li><p>factory-method 属性：用于指定实例工厂中创建对象的方法。</p>
+<pre><code>  InstanceFactory.java
+  /**
+  * 模拟一个实例工厂，创建业务层实现类
+  * 此工厂创建对象，必须现有工厂实例对象，再调用方法
+  */
+  public class InstanceFactory {
+  public IAccountService createAccountService(){
+  return new AccountServiceImpl();
+  }
+  }</code></pre></li>
+</ul>
+</li>
+</ol>
+</li>
+</ol>
+<pre><code>            spring xml配置文件
+            &lt;bean id="instancFactory" class="com.itheima.factory.InstanceFactory"&gt;&lt;/bean&gt;
+            &lt;bean id="accountService"
+            factory-bean="instancFactory"
+            factory-method="createAccountService"&gt;&lt;/bean&gt;
+
+3. 使用工厂中的静态方法创建对象（使用某个类中的静态方法创建对象，并存入spring容器）
+    - 先把工厂的创建交给 spring 来管理。然后在使用工厂的 bean 来调用里面的方法
+    - factory-bean 属性：用于指定实例工厂 bean 的 id。
+    - factory-method 属性：用于指定实例工厂中创建对象的方法。
+
+            StaticFactory.java
+            /**
+            * 模拟一个实例工厂，创建业务层实现类
+            * 此工厂创建对象，必须现有工厂实例对象，再调用方法
+            */
+            public class StaticFactory {
+            public static IAccountService createAccountService(){
+            return new AccountServiceImpl();
+            }
+            }
+
+
+            spring xml配置文件
+            &lt;bean id="accountService" class="com.itheima.factory.StaticFactory" 
+            factory-method="createAccountService"&gt;&lt;/bean&gt;</code></pre><ol start="3">
+<li><p>bean的作用范围：</p>
+<ol>
+<li>bean标签的scope属性：<ul>
+<li>singleton：单例值（默认值） 一个应用只有一个对象的实例。它的作用范围就是整个引用</li>
+<li>prototype：多例的 每次访问对象时，都会重新创建对象实例</li>
+<li>request：作用于web应用的请求范围</li>
+<li>session：作用于web应用的会话范围</li>
+<li>global-session：作用于集群环境的会话范围（全局会话范围），当不是集群环境时，它就是session</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p>bean对象的生命周期：</p>
+<ol>
+<li>单例对象： scope=”singleton”<ul>
+<li>一个应用只有一个对象的实例。它的作用范围就是整个引用。</li>
+<li>生命周期：<ul>
+<li>对象出生：当应用加载，创建容器时，对象就被创建了。</li>
+<li>对象活着：只要容器在，对象一直活着。</li>
+<li>对象死亡：当应用卸载，销毁容器时，对象就被销毁了。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>多例对象： scope=”prototype”<ul>
+<li>每次访问对象时，都会重新创建对象实例。</li>
+<li>生命周期：<ul>
+<li>对象出生：当使用对象时，创建新的对象实例。</li>
+<li>对象活着：只要对象在使用中，就一直活着。</li>
+<li>对象死亡：当对象长时间不用时，且没有被别的对象引用时，被java的垃圾回收器回收了。<h1 id="5-spring中的依赖注入（Dependency-Injectio-n"><a href="#5-spring中的依赖注入（Dependency-Injectio-n" class="headerlink" title="5. spring中的依赖注入（Dependency Injectio #n)"></a>5. spring中的依赖注入（Dependency Injectio #n)</h1></li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p>基本概念</p>
+<ul>
+<li>依赖注入： Dependency Injection。 它是 spring 框架核心 ioc 的具体实现。</li>
+<li>我们的程序在编写时，通过控制反转，把对象的创建交给了spring，但是代码中不可能出现没有依赖的情况。ioc解耦只是降低他们的依赖关系，但不会消除。例如：我们的业务层仍会调用持久层的方法。那这种业务层和持久层的依赖关系，在使用 spring 之后，就让spring来维护了。简单的说，就是坐等框架把持久层对象传入业务层，而不用我们自己去获取。</li>
+</ul>
+</li>
+<li><p>依赖关系的管理：交给spring来维护。当当前类需要用到其他类的对象时，由spring为我们提供，我们只需要在配置文件中说明</p>
+</li>
+<li><p>依赖关系的维护就称之为依赖注入</p>
+</li>
+<li><p>依赖注入能注入的数据：（三类）</p>
+<ol>
+<li>基本类型和String</li>
+<li>其他bean类型（配置文件中或者注解配置过的bean）</li>
+<li>复杂类型/集合类型</li>
+</ol>
+</li>
+<li><p>依赖注入的方式（三种）</p>
+<ol>
+<li><p>使用构造函数提供</p>
+<ul>
+<li><p>使用类中的构造函数，给成员变量赋值。注意，赋值的操作不是我们自己做的，而是通过配置的方式，让spring框架来为我们注入</p>
+<pre><code>  &lt;!-- 使用构造函数的方式，给 service 中的属性传值
+  要求：
+      类中需要提供一个对应参数列表的构造函数。
+  涉及的标签：
+      constructor-arg
+  属性：
+      index:指定参数在构造函数参数列表的索引位置
+      type:指定参数在构造函数中的数据类型
+      name:指定参数在构造函数中的名称 用这个找给谁赋值
+      =======上面三个都是找给谁赋值，下面两个指的是赋什么值的==============
+      value:它能赋的值是基本数据类型和String类型
+      ref:它能赋的值是其他 bean 类型，也就是说，必须得是在spring配置文件中配置过的 bean
+
+  优势：获取bean对象时，注入数据是必须的操作，否则对象无法创建成功
+  弊端：改变了bean对象的实例化方式，使在创建对象时，如果用不到这些数据，也必须提供
+  --&gt;
+  &lt;bean id="accountService" class="com.itheima.service.impl.AccountServiceImpl"&gt;
+      &lt;constructor-arg name="name" value="张三"&gt;&lt;/constructor-arg&gt;
+      &lt;constructor-arg name="age" value="18"&gt;&lt;/constructor-arg&gt;
+      &lt;constructor-arg name="birthday" ref="now"&gt;&lt;/constructor-arg&gt;
+  &lt;/bean&gt;
+  &lt;bean id="now" class="java.util.Date"&gt;&lt;/bean&gt;</code></pre></li>
+</ul>
+</li>
+<li><p>使用set方法提供（实际开发中，此种方式用的较多）</p>
+<ul>
+<li><p>在类中提供需要注入成员的 set 方法。</p>
+<pre><code>  &lt;!-- 通过配置文件给 bean 中的属性传值：使用 set 方法的方式
+  涉及的标签：
+      property
+  属性：
+      name：找的是类中 set 方法后面的部分
+      ref：给属性赋值是其他 bean 类型的
+      value：给属性赋值是基本数据类型和 string 类型的
+
+  优势：创建对象时，没有明确的限制，可以直接使用默认构造函数
+  弊端：如果有某个成员必须有值，则获取对象是有可能set方法没有执行
+  --&gt;
+  &lt;bean id="accountService" class="com.itheima.service.impl.AccountServiceImpl"&gt;
+      &lt;property name="name" value="test"&gt;&lt;/property&gt;
+      &lt;property name="age" value="21"&gt;&lt;/property&gt;
+      &lt;property name="birthday" ref="now"&gt;&lt;/property&gt;
+  &lt;/bean&gt;
+  &lt;bean id="now" class="java.util.Date"&gt;&lt;/bean&gt;</code></pre></li>
+<li><p>集合类型数据的注入（只能使用构造函数和set方式两种方法）</p>
+<ul>
+<li>set方法<!-- 注入集合数据
+  List 结构的：
+  array,list,set
+  Map 结构的
+  map,entry,props,prop
+  -->
+  <bean id="accountService" class="com.itheima.service.impl.AccountServiceImpl">
+  <!-- 在注入集合数据时，只要结构相同，标签可以互换 -->
+  <!-- 给数组注入数据 -->
+  <property name="myStrs">
+  <set>
+  <value>AAA</value>
+  <value>BBB</value>
+  <value>CCC</value>
+  </set>
+  </property>
+  <!-- 注入 list 集合数据 -->
+  <property name="myList">
+  <array>
+  <value>AAA</value>
+  <value>BBB</value>
+  <value>CCC</value>
+  </array>
+  </property>
+  <!-- 注入 set 集合数据 -->
+  <property name="mySet">
+  <list>
+  <value>AAA</value>
+  <value>BBB</value>
+  <value>CCC</value>
+  </list>
+  </property>
+  <!-- 注入 Map 数据 -->
+  <property name="myMap">
+  <props>
+  <prop key="testA">aaa</prop>
+  <prop key="testB">bbb</prop>
+  </props>
+  </property>
+  <!-- 注入 properties 数据 -->
+  <property name="myProps">
+  <map>
+  <entry key="testA" value="aaa"></entry>
+  <entry key="testB">
+  <value>bbb</value>
+  </entry>
+  </map>
+  </property>    
+  </bean>
+
+
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+</ol>
+<pre><code>3. 使用注解提供</code></pre><h1 id="6-基于注解的IOC配置"><a href="#6-基于注解的IOC配置" class="headerlink" title="6. 基于注解的IOC配置"></a>6. 基于注解的IOC配置</h1><ol>
+<li><p>环境：</p>
+<ul>
+<li><p>创建spring的xml配置文件并开启对注解的支持</p>
+<ul>
+<li><p>注意：基于注解整合时，导入约束时需要多导入一个 context 名称空间下的约束 </p>
+<pre><code>  &lt;?xml version="1.0" encoding="UTF-8"?&gt;
+  &lt;beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:context="http://www.springframework.org/schema/context"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans
+  http://www.springframework.org/schema/beans/spring-beans.xsd
+  http://www.springframework.org/schema/context
+  http://www.springframework.org/schema/context/spring-context.xsd"&gt;
+  &lt;!-- 告知 spring 创建容器时要扫描的包  --&gt;
+  &lt;context:component-scan base-package="com.itheima"&gt;&lt;/context:component-scan&gt;
+  &lt;!-- 配置 dbAssit --&gt;
+  &lt;bean id="dbAssit" class="com.itheima.dbassit.DBAssit"&gt;
+  &lt;property name="dataSource" ref="dataSource"&gt;&lt;/property&gt;
+  &lt;/bean&gt;
+  &lt;!-- 配置数据源 --&gt;
+  &lt;bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"&gt;
+  &lt;property name="driverClass" value="com.mysql.jdbc.Driver"&gt;&lt;/property&gt;
+  &lt;property name="jdbcUrl" value="jdbc:mysql:///spring_day02"&gt;&lt;/property&gt;
+  &lt;property name="user" value="root"&gt;&lt;/property&gt;
+  &lt;property name="password" value="1234"&gt;&lt;/property&gt;
+  &lt;/bean&gt;
+  &lt;/beans&gt;</code></pre></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>常用的IOC注解按照作用分类</p>
+<ul>
+<li>用于创建对象的<ul>
+<li>类似于xml配置文件中的<bean>标签</bean></li>
+<li>@Component：<ul>
+<li>作用：用于把当前类对象存入spring容器中</li>
+<li>属性：value：用于指定bean的id，当我们不写时，它的默认值是当前类名，且首字母小写</li>
+</ul>
+</li>
+<li>@Controller：一般用在表现层</li>
+<li>@Service：一般用在业务层</li>
+<li>@Repository：一般用在持久层</li>
+<li>以上三个注解的作用和属性和@Component是一模一样的。</li>
+<li>它们三个是spring框架为我们提供明确的三层使用的注解，使三层架构对象更为清晰</li>
+</ul>
+</li>
+<li>用于注入数据的<ul>
+<li>类似于xml配置文件中<bean>标签中的<property></property></bean></li>
+<li>@Autowired:<ul>
+<li>作用：自动按照类型注入。<ul>
+<li>只要容器中有唯一的一个bean对象类型和要注入的变量类型匹配，就可注入成功。</li>
+<li>若IOC容器中没有匹配到，则报错</li>
+<li>若IOC容器中有多个类型匹配时，可能会报错</li>
+</ul>
+</li>
+<li>位置：变量，方法上</li>
+</ul>
+</li>
+<li>@Qualifier：<ul>
+<li>作用：在自动按照类型注入的基础之上，再按照 Bean的id 注入。它在给类成员注入时不能独立使用，必须和@Autowire 一起使用；但是给方法参数注入时，可以独立使用。</li>
+</ul>
+</li>
+<li>Resource：<ul>
+<li>作用：直接按照 Bean 的 id 注入。它也只能注入其他 bean 类型</li>
+<li>属性：    name：指定 bean 的 id。</li>
+</ul>
+</li>
+<li>注意： 以上三个注入都只能注入其他bean类型的数据，而基本类型和String类型无法使用上述注解实现，另外，集合类型的注入只能通过xml来实现</li>
+<li>@Value<ul>
+<li>作用：注入基本数据类型和string类型数据</li>
+<li>属性：value：用于指定数据的值。它可以使用spring中的SpEL（也就是spring中的el表达式）</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>用于改变作用范围的<ul>
+<li>类似于xml配置文件中<bean>标签中的<scope></scope></bean></li>
+<li>@Scope<ul>
+<li>作用：指定 bean 的作用范围。</li>
+<li>属性：value：指定范围的值。取值： singleton prototype request session globalsession</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>和生命周期相关的<ul>
+<li>类似于xml配置文件中<bean>标签中的init-method和destroy-methode的作用是一样的</bean></li>
+<li>@PostConstruct<ul>
+<li>作用：用于指定初始化方法。</li>
+</ul>
+</li>
+<li>@PreDestroy<ul>
+<li>作用：用于指定销毁方法。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>spring的新注解（使spring脱离xml配置文件）</p>
+<ul>
+<li>@Configuration<ul>
+<li>作用：用于指定当前类是一个 spring 配置类， 当创建容器时会从该类上加载注解。 获取容器时需要使用AnnotationApplicationContext(有@Configuration 注解的类.class)。</li>
+<li>属性：value:用于指定配置类的字节码</li>
+<li>当配置类作为AnnotationConfigApplicationContext对象创建的参数时，该注解可以不写</li>
+</ul>
+</li>
+<li>@ComponentScan<ul>
+<li>作用：用于指定 spring 在初始化容器时要扫描的包。 作用和在 spring 的 xml 配置文件中的：&lt;context:component-scan base-package=”com.itheima”/&gt;是一样的。</li>
+<li>属性：basePackages：用于指定要扫描的包。和该注解中的 value 属性作用一样。</li>
+</ul>
+</li>
+<li>@Bean<ul>
+<li>作用：该注解只能写在方法上，表明使用此方法创建一个对象，并且放入 spring 容器。</li>
+<li>属性：name：给当前@Bean 注解方法创建的对象指定一个名称(即 bean 的 id）。</li>
+<li>当使用注解配置方法时，如果方法有参数，spring框架回去容器中查找有没有可用的bean对象，查找的方式和Autowired注解的作用是一样的</li>
+</ul>
+</li>
+<li>@Import<ul>
+<li>作用：用于导入其他配置类，在引入其他配置类时，可以不用再写@Configuration 注解。写上也没问题</li>
+<li>属性：value[]：用于指定其他配置类的字节码。</li>
+<li>有@Import注解的类是父配置类，导入的类都是子配置类</li>
+</ul>
+</li>
+<li>@PropertySource<ul>
+<li>作用：用于加载.properties 文件中的配置。例如配置数据源时，可以把连接数据库的信息写到properties 配置文件中，就可以使用此注解指定 properties 配置文件的位置。</li>
+<li>属性：value[]：用于指定 properties 文件位置。如果是在类路径下，需要写上 classpath:</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>注解和xml的选择</p>
+<pre><code>     ![注解和xml的选择](https://i.imgur.com/dFAZVUb.png)</code></pre><h1 id="7-spring整合junit配置"><a href="#7-spring整合junit配置" class="headerlink" title="7. spring整合junit配置"></a>7. spring整合junit配置</h1></li>
+<li><p>导入spring整合junit的jar（坐标）</p>
+</li>
+<li><p>使用Junit提供的一个注解把原有的main方法替换了，替换成spring提供的</p>
+<ul>
+<li><p>@Runwith</p>
+<p>  <code>@RunWith(SpringJUnit4ClassRunner.class)</code></p>
+</li>
+</ul>
+</li>
+<li><p>告知spring的运行器，spring的IOC创建是基于XML还是注解的，并说明位置</p>
+<ul>
+<li><p>@ContextConfiguration()</p>
+<ul>
+<li><p>locations 属性： 用于指定配置文件的位置。如果是类路径下，需要用 classpath:表明</p>
+</li>
+<li><p>classes 属性： 用于指定注解的类。当不使用 xml 配置时，需要用此属性指定注解类的位置</p>
+<pre><code>  @RunWith(SpringJUnit4ClassRunner.class)
+  @ContextConfiguration(locations= {"classpath:bean.xml"})</code></pre></li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://livinglh.top" rel="external nofollow noreferrer">livinglh</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://livinglh.top/2019/12/13/spring-ji-ben-shi-yong/">https://livinglh.top/2019/12/13/spring-ji-ben-shi-yong/</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="https://livinglh.top" target="_blank">livinglh</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            <span class="chip bg-color">无标签</span>
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/2019/12/13/spring-ji-ben-shi-yong/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="spring基本使用">
+                        
+                        <span class="card-title">spring基本使用</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            
+title: spring基本使用date: 2019-12-12 08:49:34categories: Java Springtags:  
+
+Spring
+Javacover: true
+
+
+1. Sring是什么？
+Spring 
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-12-13
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-user fa-fw"></i>
+                            livinglh
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/2019/12/10/shi-yong-hexo-da-jian-github-bo-ke-bing-bang-ding-yu-ming/">
+                    <div class="card-image">
+                        
+                        
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="使用hexo搭建github博客并绑定域名">
+                        
+                        <span class="card-title">使用hexo搭建github博客并绑定域名</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            1.创建github个人仓库
+登录到GitHub，点击GitHub中的New repository创建新仓库，仓库名应该为：用户名.http://github.io 这个用户名使用你的GitHub帐号名称代替，固定写法2.安装git
+
+
+在
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2019-12-10
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/hexo/" class="post-category">
+                                    hexo
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/hexo/">
+                        <span class="chip bg-color">hexo</span>
+                    </a>
+                    
+                    <a href="/tags/blog/">
+                        <span class="chip bg-color">blog</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeLang.js"></script>
+
+    
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="/libs/codeBlock/codeShrink.js"></script>
+
+
+<!-- 代码块折行 -->
+
+<style type="text/css">
+code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
+</style>
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+
+    <footer class="page-footer bg-color">
+    <div class="container row center-align">
+        <div class="col s12 m8 l8 copy-right">
+            本站由 <a href="https://livinglh.top" target="_blank">&copylivinglh</a> 基于
+            <a href="https://hexo.io/" target="_blank"> Hexo </a>的
+			<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank"> hexo-theme-matery </a>主题搭建.
+			<span id="year">年份</span>
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">5.2k</span>&nbsp;字
+            
+            
+            
+			
+            
+            <br>
+            
+            <span id="sitetime">载入运行时间...</span>
+            <script>
+                function siteTime() {
+                    window.setTimeout("siteTime()", 1000);
+                    var seconds = 1000;
+                    var minutes = seconds * 60;
+                    var hours = minutes * 60;
+                    var days = hours * 24;
+                    var years = days * 365;
+                    var today = new Date();
+                    var startYear = "2019";
+                    var startMonth = "12";
+                    var startDate = "10";
+                    var startHour = "12";
+                    var startMinute = "0";
+                    var startSecond = "0";
+                    var todayYear = today.getFullYear();
+                    var todayMonth = today.getMonth() + 1;
+                    var todayDate = today.getDate();
+                    var todayHour = today.getHours();
+                    var todayMinute = today.getMinutes();
+                    var todaySecond = today.getSeconds();
+                    var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                    var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                    var diff = t2 - t1;
+                    var diffYears = Math.floor(diff / years);
+                    var diffDays = Math.floor((diff / days) - diffYears * 365);
+                    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+                    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) /
+                        minutes);
+                    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours -
+                        diffMinutes * minutes) / seconds);
+                    if (startYear == todayYear) {
+                        document.getElementById("year").innerHTML = todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffDays + " 天 " + diffHours +
+                            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    } else {
+                        document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffYears + " 年 " + diffDays +
+                            " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    }
+                }
+                setInterval(siteTime, 1000);
+            </script>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link ">
+
+
+    <a href="mailto:390866592@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=390866592" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 390866592" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/atom.xml" class="tooltipped" target="_blank" data-tooltip="RSS 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="/libs/materialize/materialize.min.js"></script>
+    <script src="/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="/libs/aos/aos.js"></script>
+    <script src="/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="/js/matery.js"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="/libs/others/clicklove.js" async="async"></script>
+    
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <script type="text/javascript" src="/libs/background/ribbon-dynamic.js" async="async"></script>
+    
+    
+    
+    <script src="/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+</body>
+
+</html>
