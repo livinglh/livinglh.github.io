@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://livinglh.top/"/>
-  <updated>2019-12-13T02:12:14.986Z</updated>
+  <updated>2019-12-13T02:18:24.657Z</updated>
   <id>https://livinglh.top/</id>
   
   <author>
@@ -18,10 +18,10 @@
   
   <entry>
     <title>spring基本使用</title>
-    <link href="https://livinglh.top/2019/12/13/spring-ji-ben-shi-yong/"/>
-    <id>https://livinglh.top/2019/12/13/spring-ji-ben-shi-yong/</id>
-    <published>2019-12-13T00:49:34.422Z</published>
-    <updated>2019-12-13T02:12:14.986Z</updated>
+    <link href="https://livinglh.top/2019/12/12/spring-ji-ben-shi-yong/"/>
+    <id>https://livinglh.top/2019/12/12/spring-ji-ben-shi-yong/</id>
+    <published>2019-12-12T00:49:34.000Z</published>
+    <updated>2019-12-13T02:18:24.657Z</updated>
     
     <summary type="html">
     
@@ -29,17 +29,20 @@
       
         
         
-          &lt;hr&gt;
-&lt;p&gt;title: spring基本使用&lt;br&gt;date: 2019-12-12 08:49:34&lt;br&gt;categories: Java Spring&lt;br&gt;tags:  &lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Spring&lt;/li&gt;
-&lt;li&gt;Java&lt;br&gt;cover:
+          &lt;h1 id=&quot;1-Sring是什么？&quot;&gt;&lt;a href=&quot;#1-Sring是什么？&quot; class=&quot;headerlink&quot; title=&quot;1. Sring是什么？&quot;&gt;&lt;/a&gt;1. Sring是什么？&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;Spring 是分层的 Java SE/EE 应用
         
       
     
     </summary>
     
     
+      <category term="Java Spring" scheme="https://livinglh.top/categories/Java-Spring/"/>
+    
+    
+      <category term="Spring" scheme="https://livinglh.top/tags/Spring/"/>
+    
+      <category term="Java" scheme="https://livinglh.top/tags/Java/"/>
     
   </entry>
   
