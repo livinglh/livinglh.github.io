@@ -389,14 +389,14 @@
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    5.9k
+                    6.1k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    23 分
+                    24 分
                 </div>
                 
 				
@@ -624,7 +624,7 @@
 </ol>
 </li>
 </ol>
-<h2 id="5-Spring中的依赖注入（Dependency-Injection"><a href="#5-Spring中的依赖注入（Dependency-Injection" class="headerlink" title="5. Spring中的依赖注入（Dependency Injection)"></a>5. Spring中的依赖注入（Dependency Injection)</h2><ol>
+<h2 id="5-Spring中的依赖注入"><a href="#5-Spring中的依赖注入" class="headerlink" title="5. Spring中的依赖注入"></a>5. Spring中的依赖注入</h2><ol>
 <li><p>基本概念</p>
 <ul>
 <li>依赖注入： Dependency Injection。 它是 spring 框架核心 ioc 的具体实现。</li>
@@ -693,58 +693,56 @@
   &lt;bean id="now" class="java.util.Date"&gt;&lt;/bean&gt;</code></pre></li>
 <li><p>集合类型数据的注入（只能使用构造函数和set方式两种方法）</p>
 <ul>
-<li>set方法<!-- 注入集合数据
-  List 结构的：
-  array,list,set
-  Map 结构的
-  map,entry,props,prop
-  -->
-  <bean id="accountService" class="com.it.service.impl.AccountServiceImpl">
-  <!-- 在注入集合数据时，只要结构相同，标签可以互换 -->
-  <!-- 给数组注入数据 -->
-  <property name="myStrs">
-  <set>
-  <value>AAA</value>
-  <value>BBB</value>
-  <value>CCC</value>
-  </set>
-  </property>
-  <!-- 注入 list 集合数据 -->
-  <property name="myList">
-  <array>
-  <value>AAA</value>
-  <value>BBB</value>
-  <value>CCC</value>
-  </array>
-  </property>
-  <!-- 注入 set 集合数据 -->
-  <property name="mySet">
-  <list>
-  <value>AAA</value>
-  <value>BBB</value>
-  <value>CCC</value>
-  </list>
-  </property>
-  <!-- 注入 Map 数据 -->
-  <property name="myMap">
-  <props>
-  <prop key="testA">aaa</prop>
-  <prop key="testB">bbb</prop>
-  </props>
-  </property>
-  <!-- 注入 properties 数据 -->
-  <property name="myProps">
-  <map>
-  <entry key="testA" value="aaa"></entry>
-  <entry key="testB">
-  <value>bbb</value>
-  </entry>
-  </map>
-  </property>    
-  </bean>
-
-
-</li>
+<li><p>set方法</p>
+<pre><code>&lt;!-- 注入集合数据
+List 结构的：
+array,list,set
+Map 结构的
+map,entry,props,prop
+--&gt;
+&lt;bean id="accountService" class="com.itheima.service.impl.AccountServiceImpl"&gt;
+&lt;!-- 在注入集合数据时，只要结构相同，标签可以互换 --&gt;
+&lt;!-- 给数组注入数据 --&gt;
+&lt;property name="myStrs"&gt;
+&lt;set&gt;
+&lt;value&gt;AAA&lt;/value&gt;
+&lt;value&gt;BBB&lt;/value&gt;
+&lt;value&gt;CCC&lt;/value&gt;
+&lt;/set&gt;
+&lt;/property&gt;
+&lt;!-- 注入 list 集合数据 --&gt;
+&lt;property name="myList"&gt;
+&lt;array&gt;
+&lt;value&gt;AAA&lt;/value&gt;
+&lt;value&gt;BBB&lt;/value&gt;
+&lt;value&gt;CCC&lt;/value&gt;
+&lt;/array&gt;
+&lt;/property&gt;
+&lt;!-- 注入 set 集合数据 --&gt;
+&lt;property name="mySet"&gt;
+&lt;list&gt;
+&lt;value&gt;AAA&lt;/value&gt;
+&lt;value&gt;BBB&lt;/value&gt;
+&lt;value&gt;CCC&lt;/value&gt;
+&lt;/list&gt;
+&lt;/property&gt;
+&lt;!-- 注入 Map 数据 --&gt;
+&lt;property name="myMap"&gt;
+&lt;props&gt;
+&lt;prop key="testA"&gt;aaa&lt;/prop&gt;
+&lt;prop key="testB"&gt;bbb&lt;/prop&gt;
+&lt;/props&gt;
+&lt;/property&gt;
+&lt;!-- 注入 properties 数据 --&gt;
+&lt;property name="myProps"&gt;
+&lt;map&gt;
+&lt;entry key="testA" value="aaa"&gt;&lt;/entry&gt;
+&lt;entry key="testB"&gt;
+&lt;value&gt;bbb&lt;/value&gt;
+&lt;/entry&gt;
+&lt;/map&gt;
+&lt;/property&gt;
+&lt;/bean&gt;</code></pre></li>
 </ul>
 </li>
 </ul>
@@ -752,7 +750,10 @@
 </ol>
 </li>
 </ol>
-<pre><code>3. 使用注解提供</code></pre><h2 id="6-Spring中基于注解的IOC配置"><a href="#6-Spring中基于注解的IOC配置" class="headerlink" title="6. Spring中基于注解的IOC配置"></a>6. Spring中基于注解的IOC配置</h2><ol>
+<ol start="3">
+<li>使用注解提供</li>
+</ol>
+<h2 id="6-Spring中基于注解的IOC配置"><a href="#6-Spring中基于注解的IOC配置" class="headerlink" title="6. Spring中基于注解的IOC配置"></a>6. Spring中基于注解的IOC配置</h2><ol>
 <li><p>环境：</p>
 <ul>
 <li><p>创建spring的xml配置文件并开启对注解的支持</p>
@@ -1102,6 +1103,7 @@
  public class SpringConfiguration {
  }</code></pre></li>
 </ol>
+<p>​                        </p>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -1441,10 +1443,8 @@
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            1.创建github个人仓库
-登录到GitHub，点击GitHub中的New repository创建新仓库，仓库名应该为：用户名.http://github.io 这个用户名使用你的GitHub帐号名称代替，固定写法
-2.安装git
-在G
+                            hexo + github 搭建博客1.创建github个人仓库
+登录到GitHub，点击GitHub中的New repository创建新仓库，仓库名应该为：用户名.http://github.io 这个用户名使用你的GitHub帐号名称
                         
                     </div>
                     <div class="publish-info">
@@ -1620,7 +1620,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">7k</span>&nbsp;字
+                class="white-color">7.2k</span>&nbsp;字
             
             
             
