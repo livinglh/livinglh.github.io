@@ -458,15 +458,13 @@
 <li><p>安装Git部署插件</p>
 <pre><code>`npm install hexo-deployer-git --save`</code></pre></li>
 <li><p>输入命令</p>
-<pre><code> hexo clean 
- hexo g 
- hexo d</code></pre></li>
-<li><p>其实第三条的 hexo d 就是部署网站命令，d是deploy的缩写。完成后，此时你的博客已经上线了，可以在网络上被访问了。打开浏览器，在地址栏输入你的放置个人网站的仓库路径，即 <a href="http://xxxx.github.io" target="_blank" rel="noopener">http://xxxx.github.io</a> </p>
 </li>
 </ol>
-</li>
+<pre><code>    hexo clean 
+    hexo g 
+    hexo d</code></pre></li>
 </ol>
-<h2 id="5-与域名绑定"><a href="#5-与域名绑定" class="headerlink" title="5.与域名绑定"></a>5.与域名绑定</h2><ol>
+<pre><code>4. 其实第三条的 hexo d 就是部署网站命令，d是deploy的缩写。完成后，此时你的博客已经上线了，可以在网络上被访问了。打开浏览器，在地址栏输入你的放置个人网站的仓库路径，即 http://xxxx.github.io </code></pre><h2 id="5-与域名绑定"><a href="#5-与域名绑定" class="headerlink" title="5.与域名绑定"></a>5.与域名绑定</h2><ol>
 <li>购买域名</li>
 <li>添加解析<ol>
 <li>解析1<br>记录类型：CNAME<br>主机记录：www<br>记录值： 用户名.github.io</li>
@@ -481,11 +479,13 @@
 <li>进入本地博客文件夹 ，进入blog/source目录下，创建一个记事本文件，输入你的域名，对，只要写进你自己的域名即可。保存，命名为CNAME ，注意保存成所有文件而不是txt文件。</li>
 </ol>
 </li>
-<li>重新发布<br>  hexo clean<br>  hexo g<br>  hexo d<ul>
+<li>重新发布</li>
+</ol>
+<pre><code>   hexo clean
+   hexo g
+   hexo d</code></pre><ul>
 <li>此时就可以通过自己的域名进入到自己搭建的网站了。</li>
 </ul>
-</li>
-</ol>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -742,19 +742,19 @@
             <div class="article-badge left-badge text-color">
                 <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
             <div class="card">
-                <a href="/2019/12/12/spring-ji-ben-shi-yong/">
+                <a href="/2019/12/12/spring-ji-ben-shi-yong-1/">
                     <div class="card-image">
                         
                         
-                        <img src="/medias/featureimages/0.jpg" class="responsive-img" alt="Spring基本使用">
+                        <img src="/medias/featureimages/16.jpg" class="responsive-img" alt="Spring基本使用（1）">
                         
-                        <span class="card-title">Spring基本使用</span>
+                        <span class="card-title">Spring基本使用（1）</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            Spring1. Spring是什么Spring 是分层的 Java SE/EE 应用 full-stack 轻量级开源框架，以 IoC（Inverse Of Control：反转控制）和 AOP（Aspect Oriented Progr
+                            Spring简介，Spring容器，Spring中Bean管理，Spring中的IOC（依赖注入），Spring中的AOP
                         
                     </div>
                     <div class="publish-info">
@@ -993,7 +993,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">7.2k</span>&nbsp;字
+                class="white-color">10.8k</span>&nbsp;字
             
             
             

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://livinglh.top/"/>
-  <updated>2019-12-13T11:15:25.625Z</updated>
+  <updated>2019-12-14T08:45:23.085Z</updated>
   <id>https://livinglh.top/</id>
   
   <author>
@@ -17,11 +17,44 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Spring基本使用</title>
-    <link href="https://livinglh.top/2019/12/12/spring-ji-ben-shi-yong/"/>
-    <id>https://livinglh.top/2019/12/12/spring-ji-ben-shi-yong/</id>
+    <title>Spring的基本使用（2）</title>
+    <link href="https://livinglh.top/2019/12/14/spring-ji-ben-shi-yong-2/"/>
+    <id>https://livinglh.top/2019/12/14/spring-ji-ben-shi-yong-2/</id>
+    <published>2019-12-14T04:08:55.000Z</published>
+    <updated>2019-12-14T08:45:23.085Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;Spring对JDBC和数据层的支持&quot;&gt;&lt;a href=&quot;#Spring对JDBC和数据层的支持&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="Java Spring" scheme="https://livinglh.top/categories/Java-Spring/"/>
+    
+    
+      <category term="Spring" scheme="https://livinglh.top/tags/Spring/"/>
+    
+      <category term="Java" scheme="https://livinglh.top/tags/Java/"/>
+    
+      <category term="Jdbc" scheme="https://livinglh.top/tags/Jdbc/"/>
+    
+      <category term="事务控制" scheme="https://livinglh.top/tags/%E4%BA%8B%E5%8A%A1%E6%8E%A7%E5%88%B6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Spring基本使用（1）</title>
+    <link href="https://livinglh.top/2019/12/12/spring-ji-ben-shi-yong-1/"/>
+    <id>https://livinglh.top/2019/12/12/spring-ji-ben-shi-yong-1/</id>
     <published>2019-12-12T00:49:34.000Z</published>
-    <updated>2019-12-13T11:15:25.625Z</updated>
+    <updated>2019-12-14T07:36:07.527Z</updated>
     
     <summary type="html">
     
@@ -54,7 +87,7 @@
     <link href="https://livinglh.top/2019/12/10/shi-yong-hexo-da-jian-github-bo-ke-bing-bang-ding-yu-ming/"/>
     <id>https://livinglh.top/2019/12/10/shi-yong-hexo-da-jian-github-bo-ke-bing-bang-ding-yu-ming/</id>
     <published>2019-12-10T08:23:22.000Z</published>
-    <updated>2019-12-13T13:25:41.518Z</updated>
+    <updated>2019-12-13T14:14:24.822Z</updated>
     
     <summary type="html">
     
