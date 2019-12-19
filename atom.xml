@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://livinglh.top/"/>
-  <updated>2019-12-16T11:43:46.731Z</updated>
+  <updated>2019-12-19T05:54:52.894Z</updated>
   <id>https://livinglh.top/</id>
   
   <author>
@@ -15,6 +15,66 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>SSM整合环境搭建</title>
+    <link href="https://livinglh.top/2019/12/19/ssm-zheng-he-huan-jing-da-jian/"/>
+    <id>https://livinglh.top/2019/12/19/ssm-zheng-he-huan-jing-da-jian/</id>
+    <published>2019-12-19T01:29:29.000Z</published>
+    <updated>2019-12-19T05:54:52.894Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;基本环境准备&quot;&gt;&lt;a href=&quot;#基本环境准备&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="SSM" scheme="https://livinglh.top/categories/SSM/"/>
+    
+    
+      <category term="Spring" scheme="https://livinglh.top/tags/Spring/"/>
+    
+      <category term="SpringMVC" scheme="https://livinglh.top/tags/SpringMVC/"/>
+    
+      <category term="MyBatis" scheme="https://livinglh.top/tags/MyBatis/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>SpringMVC基本使用</title>
+    <link href="https://livinglh.top/2019/12/17/springmvc-ji-ben-shi-yong/"/>
+    <id>https://livinglh.top/2019/12/17/springmvc-ji-ben-shi-yong/</id>
+    <published>2019-12-17T02:37:34.000Z</published>
+    <updated>2019-12-17T13:44:58.665Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;三层架构和MVC&quot;&gt;&lt;a href=&quot;#三层架构和MVC&quot; class=&quot;headerlink&quot; title=&quot;三层架构和MVC&quot;&gt;&lt;/a&gt;三层架构和MVC&lt;/h2&gt;&lt;h3 id=&quot;三层架构&quot;&gt;&lt;a href=&quot;#三层架构&quot; class=&quot;headerlink&quot;
+        
+      
+    
+    </summary>
+    
+    
+      <category term="SpringMVC" scheme="https://livinglh.top/categories/SpringMVC/"/>
+    
+    
+      <category term="SpringMVC" scheme="https://livinglh.top/tags/SpringMVC/"/>
+    
+      <category term="Java" scheme="https://livinglh.top/tags/Java/"/>
+    
+  </entry>
   
   <entry>
     <title>Git基本使用</title>
@@ -110,11 +170,11 @@
   </entry>
   
   <entry>
-    <title>使用hexo搭建github博客并绑定域名</title>
+    <title>使用Hexo搭建Github博客并绑定域名</title>
     <link href="https://livinglh.top/2019/12/10/shi-yong-hexo-da-jian-github-bo-ke-bing-bang-ding-yu-ming/"/>
     <id>https://livinglh.top/2019/12/10/shi-yong-hexo-da-jian-github-bo-ke-bing-bang-ding-yu-ming/</id>
     <published>2019-12-10T08:23:22.000Z</published>
-    <updated>2019-12-13T14:14:24.822Z</updated>
+    <updated>2019-12-19T05:58:11.393Z</updated>
     
     <summary type="html">
     
@@ -129,12 +189,12 @@
     </summary>
     
     
-      <category term="hexo" scheme="https://livinglh.top/categories/hexo/"/>
+      <category term="Hexo" scheme="https://livinglh.top/categories/Hexo/"/>
     
     
-      <category term="hexo" scheme="https://livinglh.top/tags/hexo/"/>
+      <category term="Hexo" scheme="https://livinglh.top/tags/Hexo/"/>
     
-      <category term="blog" scheme="https://livinglh.top/tags/blog/"/>
+      <category term="Blog" scheme="https://livinglh.top/tags/Blog/"/>
     
   </entry>
   
